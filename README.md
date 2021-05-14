@@ -2,7 +2,7 @@
 ![](https://img.shields.io/badge/java-1.8%2B-yellow)
 # 随机数据生成器API
 ## 概述
-基于本人的开源项目(https://github.com/yindz/common-random)实现的一个简单RestfulAPI，可直接部署使用。
+基于本人的[开源项目common-random](https://github.com/yindz/common-random) 实现的一个简单RestfulAPI，可直接部署使用。
 
 ## 优点
 - 轻量级
