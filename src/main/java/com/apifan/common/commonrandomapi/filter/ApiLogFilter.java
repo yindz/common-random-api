@@ -1,6 +1,7 @@
 package com.apifan.common.commonrandomapi.filter;
 
 import com.google.common.base.Joiner;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -45,7 +46,10 @@ public class ApiLogFilter extends OncePerRequestFilter {
         if (parameterNames != null) {
             while (parameterNames.hasMoreElements()) {
                 String name = parameterNames.nextElement();
-                paramsMap.put(name, request.getParameter(name));
+                String value = request.getParameter(name);
+                if (StringUtils.isNotBlank(value)) {
+                    paramsMap.put(name, value);
+                }
             }
         }
         return Joiner.on("&").withKeyValueSeparator("=").join(paramsMap);
